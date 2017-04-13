@@ -18,7 +18,7 @@ class TestOverflow(unittest.TestCase):
     def test_overflow(self):
         """
         Function to test where the passed value passes
-        the overflow error.
+        the OverflowError.
 
         Try with the following functions:
         overflow_math_error: will return assertion error

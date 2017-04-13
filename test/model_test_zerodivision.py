@@ -9,13 +9,14 @@ https://www.algorithmhub.com/
 
 import unittest
 import error_funcs
+import sys
 
 
 class TestZeroDivision(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_overflow(self):
+    def test_zero_division(self):
         """
         Function to test where the passed value passes
         the ZeroDivision error.
@@ -34,4 +35,5 @@ class TestZeroDivision(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    print sys.argv
     unittest.main()

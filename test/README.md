@@ -10,6 +10,7 @@ for `models`
 * TypeErrorTest
 * ValueErrorTest
 * RecursionErrorTest
+* RuntimeErrorTest
 
 for `run`
 * PermissionDeniedTest
@@ -17,7 +18,21 @@ for `run`
 * FilePermissionDeniedTest
 * FigAvailableTest
 
+####To run as a stand alone file:
+```
+$ sudo python -m unittest discover <file-name>
+```
+e.g., `sudo python -m unittest discover test/model_test_overflow.py`
+
+####To run the entire folder:
+```
+$ sudo python -m unittest discover -s <directory> -p '<regex-pattern>.py'
+```
+e.g., `sudo python -m unittest discover -s test -p '*_test_*.py'`
+
+
 ### Unit tests for OverFlowError
+
 The following throws an error while executing
 
 Input:

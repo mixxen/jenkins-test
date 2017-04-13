@@ -15,7 +15,7 @@ class TestFloatingPoint(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_overflow(self):
+    def test_floating_point(self):
         """
         Function to test where the passed value passes
         the FloatingPoint error.
@@ -26,7 +26,7 @@ class TestFloatingPoint(unittest.TestCase):
         """
 
         try:
-            error_funcs.floating_point_error(4.)
+            error_funcs.floating_point_error(-4.)
         except FloatingPointError:
             self.fail(
                 "The floating point value passed has some problems"
