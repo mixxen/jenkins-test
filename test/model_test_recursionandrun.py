@@ -25,8 +25,18 @@ class TestType(unittest.TestCase):
         type_error(1, 2, 3): will not return any error
         """
 
+        def recursion_test_error():
+            "Function to demonstrate recursion error"
+
+            return recursion_test_error()
+
+        def recursion_test_no_error():
+            "Function to demonstrate no recursion error"
+
+            pass
+
         try:
-            error_funcs.type_error(1, 2, '3')
+            error_funcs.recursion_run_error(recursion_test_error)
         except RuntimeError as e:
             if str(e) == 'maximum recursion depth exceeded':
                 self.fail(

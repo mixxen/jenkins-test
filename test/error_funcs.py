@@ -86,15 +86,10 @@ def value_error(val):
     return chr(val)
 
 
-def value_error(val):
+def recursion_run_error(func):
     """
     Function that raises an error when a passed value
     is ascii.
     """
 
-    def recursion_test():
-        "Function to demonstrate recursion error"
-
-        return recursion_test()
-
-    return recursion_test()
+    return func()

@@ -18,13 +18,13 @@ for `run`
 * FilePermissionDeniedTest
 * FigAvailableTest
 
-####To run as a stand alone file:
+#### To run as a stand alone file:
 ```
 $ sudo python -m unittest discover <file-name>
 ```
-e.g., `sudo python -m unittest discover test/model_test_overflow.py`
+e.g., `sudo python -m unittest discover model_test_overflow.py`
 
-####To run the entire folder:
+#### To run the entire folder:
 ```
 $ sudo python -m unittest discover -s <directory> -p '<regex-pattern>.py'
 ```
