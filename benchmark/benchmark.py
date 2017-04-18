@@ -7,16 +7,16 @@ AlgorithmHub. All rights reserved.
 https://www.algorithmhub.com/
 """
 
-import time
 import re
 import importlib
 
-from calculate_time import find_time
+from utilities.calculate_time import find_time
+
 # from algo_list import *
 # import algo_list
 # Line 9 to 17 is the equivalent of above two lines,
 # its helps us in adding files dynamically
-algo_list = importlib.import_module('algo_list')
+algo_list = importlib.import_module('.' + 'algo_list', 'algorithms')
 alg_dict = algo_list.__dict__
 
 regex_pattern = re.compile(r'algo\d+')
@@ -46,4 +46,6 @@ for alg in algo_names:
     print 'Time taken for {a}'.format(a=alg)
     results[alg] = globals()[alg](1000000)
 
+print
+print 'Overall Results'
 print results
