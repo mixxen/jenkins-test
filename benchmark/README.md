@@ -4,6 +4,7 @@ This directory contains all the benchmark tests.
 
 ## Python Dependencies
 * matplotlib
+* numpy
 
 The following parameters are to be considered for version 0.1.0:
 
@@ -21,31 +22,34 @@ $ sudo python benchmark.py
 This will give the following output:
 ```
 Time taken for algo1
-Time taken - 1 of 5 loops: 0.491042852402
-Time taken - 2 of 5 loops: 0.550430059433
-Time taken - 3 of 5 loops: 0.547604799271
-Time taken - 4 of 5 loops: 0.662984848022
-Time taken - 5 of 5 loops: 0.574695825577
+Time taken - 1 of 5 loops: 0.393783807755
+Time taken - 2 of 5 loops: 0.49577498436
+Time taken - 3 of 5 loops: 0.510788917542
+Time taken - 4 of 5 loops: 0.531482934952
+Time taken - 5 of 5 loops: 0.581915140152
 Time taken for algo2
-Time taken - 1 of 5 loops: 0.157751083374
-Time taken - 2 of 5 loops: 0.133224964142
-Time taken - 3 of 5 loops: 0.131254911423
-Time taken - 4 of 5 loops: 0.161274194717
-Time taken - 5 of 5 loops: 0.126029014587
+Time taken - 1 of 5 loops: 0.122055053711
+Time taken - 2 of 5 loops: 0.116642951965
+Time taken - 3 of 5 loops: 0.110251903534
+Time taken - 4 of 5 loops: 0.119757175446
+Time taken - 5 of 5 loops: 0.116226911545
 Time taken for algo3
-Time taken - 1 of 5 loops: 0.123675107956
-Time taken - 2 of 5 loops: 0.169538974762
-Time taken - 3 of 5 loops: 0.126391172409
-Time taken - 4 of 5 loops: 0.172492027283
-Time taken - 5 of 5 loops: 0.127220153809
+Time taken - 1 of 5 loops: 0.125606060028
+Time taken - 2 of 5 loops: 0.119740009308
+Time taken - 3 of 5 loops: 0.110261201859
+Time taken - 4 of 5 loops: 0.123066186905
+Time taken - 5 of 5 loops: 0.1447930336
 Time taken for algo4
-Time taken - 1 of 5 loops: 0.109349012375
-Time taken - 2 of 5 loops: 0.106597185135
-Time taken - 3 of 5 loops: 0.118223190308
-Time taken - 4 of 5 loops: 0.11087012291
-Time taken - 5 of 5 loops: 0.142813205719
+Time taken - 1 of 5 loops: 0.106407880783
+Time taken - 2 of 5 loops: 0.0988380908966
+Time taken - 3 of 5 loops: 0.112347841263
+Time taken - 4 of 5 loops: 0.105406999588
+Time taken - 5 of 5 loops: 0.102222919464
 
 Overall Results
-{'algo4': {'average': 0.11757054328918456, 'worst': 0.14281320571899414, 'best': 0.1065971851348877}, 'algo2': {'average': 0.14190683364868165, 'worst': 0.16127419471740723, 'best': 0.12602901458740234}, 'algo3': {'average': 0.14386348724365233, 'worst': 0.17249202728271484, 'best': 0.12367510795593262}, 'algo1': {'average': 0.5653516769409179, 'worst': 0.6629848480224609, 'best': 0.4910428524017334}}
-[Finished in 4.9s]
+{'algo4': {'average': 0.10504474639892578, 'worst': 0.11234784126281738, 'best': 0.09883809089660645}, 'algo2': {'average': 0.11698679924011231, 'worst': 0.1220550537109375, 'best': 0.11025190353393555}, 'algo3': {'average': 0.12469329833984374, 'worst': 0.14479303359985352, 'best': 0.11026120185852051}, 'algo1': {'average': 0.5027491569519043, 'worst': 0.5819151401519775, 'best': 0.3937838077545166}}
+[Finished in 6.0s]
 ```
+
+The generated graph would be:
+![](results.png?raw=true)
