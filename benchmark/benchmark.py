@@ -51,4 +51,5 @@ print
 print 'Overall Results'
 print results
 
+# to generate the graphs of the results
 generate_graph(results, algo_names)
