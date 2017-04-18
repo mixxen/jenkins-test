@@ -22,33 +22,33 @@ $ sudo python benchmark.py
 This will give the following output:
 ```
 Time taken for algo1
-Time taken - 1 of 5 loops: 0.393783807755
-Time taken - 2 of 5 loops: 0.49577498436
-Time taken - 3 of 5 loops: 0.510788917542
-Time taken - 4 of 5 loops: 0.531482934952
-Time taken - 5 of 5 loops: 0.581915140152
+Time taken - 1 of 5 loops: 3.68740606308    Memory used - 1 of 5 loops: 33248488
+Time taken - 2 of 5 loops: 1.00408911705    Memory used - 2 of 5 loops: 33250760
+Time taken - 3 of 5 loops: 0.942035913467   Memory used - 3 of 5 loops: 33250856
+Time taken - 4 of 5 loops: 0.899518966675   Memory used - 4 of 5 loops: 33250856
+Time taken - 5 of 5 loops: 1.01477003098    Memory used - 5 of 5 loops: 33250952
 Time taken for algo2
-Time taken - 1 of 5 loops: 0.122055053711
-Time taken - 2 of 5 loops: 0.116642951965
-Time taken - 3 of 5 loops: 0.110251903534
-Time taken - 4 of 5 loops: 0.119757175446
-Time taken - 5 of 5 loops: 0.116226911545
+Time taken - 1 of 5 loops: 0.541555166245   Memory used - 1 of 5 loops: 33008696
+Time taken - 2 of 5 loops: 0.496054172516   Memory used - 2 of 5 loops: 33091336
+Time taken - 3 of 5 loops: 0.50258898735    Memory used - 3 of 5 loops: 33091512
+Time taken - 4 of 5 loops: 0.504120111465   Memory used - 4 of 5 loops: 33091608
+Time taken - 5 of 5 loops: 0.460325956345   Memory used - 5 of 5 loops: 33091608
 Time taken for algo3
-Time taken - 1 of 5 loops: 0.125606060028
-Time taken - 2 of 5 loops: 0.119740009308
-Time taken - 3 of 5 loops: 0.110261201859
-Time taken - 4 of 5 loops: 0.123066186905
-Time taken - 5 of 5 loops: 0.1447930336
+Time taken - 1 of 5 loops: 0.529996871948   Memory used - 1 of 5 loops: 33009728
+Time taken - 2 of 5 loops: 0.501305103302   Memory used - 2 of 5 loops: 33092272
+Time taken - 3 of 5 loops: 0.509891033173   Memory used - 3 of 5 loops: 33092544
+Time taken - 4 of 5 loops: 0.493989944458   Memory used - 4 of 5 loops: 33092544
+Time taken - 5 of 5 loops: 0.483810901642   Memory used - 5 of 5 loops: 33092640
 Time taken for algo4
-Time taken - 1 of 5 loops: 0.106407880783
-Time taken - 2 of 5 loops: 0.0988380908966
-Time taken - 3 of 5 loops: 0.112347841263
-Time taken - 4 of 5 loops: 0.105406999588
-Time taken - 5 of 5 loops: 0.102222919464
+Time taken - 1 of 5 loops: 0.499253988266   Memory used - 1 of 5 loops: 33010664
+Time taken - 2 of 5 loops: 0.475882053375   Memory used - 2 of 5 loops: 33093216
+Time taken - 3 of 5 loops: 0.449546098709   Memory used - 3 of 5 loops: 33093480
+Time taken - 4 of 5 loops: 0.490152835846   Memory used - 4 of 5 loops: 33093576
+Time taken - 5 of 5 loops: 0.456408023834   Memory used - 5 of 5 loops: 33093576
 
 Overall Results
-{'algo4': {'average': 0.10504474639892578, 'worst': 0.11234784126281738, 'best': 0.09883809089660645}, 'algo2': {'average': 0.11698679924011231, 'worst': 0.1220550537109375, 'best': 0.11025190353393555}, 'algo3': {'average': 0.12469329833984374, 'worst': 0.14479303359985352, 'best': 0.11026120185852051}, 'algo1': {'average': 0.5027491569519043, 'worst': 0.5819151401519775, 'best': 0.3937838077545166}}
-[Finished in 6.0s]
+{'algo4': {'memory': {'average': 33076902.4, 'worst': 33093576, 'best': 33010664}, 'time': {'average': 0.3906302888250351, 'worst': 0.41563567708492277, 'best': 0.365927787528038}}, 'algo2': {'memory': {'average': 33074952.0, 'worst': 33091608, 'best': 33008696}, 'time': {'average': 0.41731056760311125, 'worst': 0.4579368550634384, 'best': 0.37670764516353605}}, 'algo3': {'memory': {'average': 33075945.6, 'worst': 33092640, 'best': 33009728}, 'time': {'average': 0.42018045972347257, 'worst': 0.44637856076717375, 'best': 0.40019259046077726}}, 'algo1': {'memory': {'average': 33250382.4, 'worst': 33250952, 'best': 33248488}, 'time': {'average': 1.4259457070684434, 'worst': 3.6037877518987655, 'best': 0.8159006554937362}}}
+[Finished in 22.7s]
 ```
 
 The generated graph would be:
