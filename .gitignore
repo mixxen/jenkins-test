@@ -1,2 +1,4 @@
 *.pyc
 dummy*.py
+.ipynb_*
+Benchmark_classifier-Copy1.ipynb
