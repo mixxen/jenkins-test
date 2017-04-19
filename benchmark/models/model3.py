@@ -59,7 +59,7 @@ print("Confusion matrix:\n%s"
       % metrics.confusion_matrix(expected, predicted))
 
 # Converting to json
-import json
+# import json
 
 # params = str(clf_gnb)
 # params_norm = params[params.find('(') + 1:params.find(')')].replace('\n', '')
@@ -71,13 +71,13 @@ import json
 #                  .split(',')]
 # }
 
-response = {
-    'params': None,
-    'params_dict': None,
-    'accuracy': accuracy,
-    'precision': metrics.precision_score(expected, predicted),
-    'recall': metrics.recall_score(expected, predicted),
-    'f1': metrics.f1_score(expected, predicted),
-}
+# response = {
+#     'params': None,
+#     'params_dict': None,
+#     'accuracy': accuracy,
+#     'precision': metrics.precision_score(expected, predicted),
+#     'recall': metrics.recall_score(expected, predicted),
+#     'f1': metrics.f1_score(expected, predicted),
+# }
 
-print json.dumps(response)
+# print json.dumps(response)

@@ -59,25 +59,25 @@ print("Confusion matrix:\n%s"
       % metrics.confusion_matrix(expected, predicted))
 
 # Converting to json
-import json
+# import json
 
-params = str(clf_poly)
-params_norm = params[params.find('(') + 1:params.find(')')].replace('\n', '')
-params_dict = {
-    k: v
-    for k, v in [p.strip().split('=')
-                 for p in params[params.find('(') + 1:params.find(')')]
-                 .replace('\n', '')
-                 .split(',')]
-}
+# params = str(clf_poly)
+# params_norm = params[params.find('(') + 1:params.find(')')].replace('\n', '')
+# params_dict = {
+#     k: v
+#     for k, v in [p.strip().split('=')
+#                  for p in params[params.find('(') + 1:params.find(')')]
+#                  .replace('\n', '')
+#                  .split(',')]
+# }
 
-response = {
-    'params': params_norm,
-    'params_dict': params_dict,
-    'accuracy': accuracy,
-    'precision': metrics.precision_score(expected, predicted),
-    'recall': metrics.recall_score(expected, predicted),
-    'f1': metrics.f1_score(expected, predicted),
-}
+# response = {
+#     'params': params_norm,
+#     'params_dict': params_dict,
+#     'accuracy': accuracy,
+#     'precision': metrics.precision_score(expected, predicted),
+#     'recall': metrics.recall_score(expected, predicted),
+#     'f1': metrics.f1_score(expected, predicted),
+# }
 
-print json.dumps(response)
+# print json.dumps(response)
