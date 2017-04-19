@@ -10,8 +10,19 @@ AlgorithmHub. All rights reserved.
 https://www.algorithmhub.com/
 """
 
+# To add the utilities directory in the sys.path
+import os
+utils_dir = os.path.dirname(os.path.dirname(__file__))
+
+import sys
+
+if os.path.isdir(utils_dir):
+  sys.path.insert(0, utils_dir)
+else:
+  raise Exception('Utilities directory not found')
+
+# Main program starts here
 # Import the required libraries
-import matplotlib.pyplot as plt
 from sklearn import (
     datasets,
     naive_bayes,
@@ -20,7 +31,10 @@ from sklearn import (
 import warnings
 warnings.filterwarnings("ignore")
 
-from utility import split_train_test
+from utilities.utils import (
+    find_time,
+    split_train_test
+)
 
 # Load the digits datasets
 digits = datasets.load_digits()
@@ -42,6 +56,14 @@ clf_gnb = naive_bayes.GaussianNB()
 # Fitting the model with training and testing data
 clf_gnb.fit(X_train, y_train)
 
+
+# To calculate the time taken
+@find_time
+def time_clf():
+  clf_gnb.fit(X_train, y_train)
+
+time_taken = time_clf()
+
 # Getting the accuracy of the model
 accuracy = clf_gnb.score(X_test, y_test) * 100
 print 'Accuracy: {a}'.format(a=accuracy)
@@ -59,7 +81,7 @@ print("Confusion matrix:\n%s"
       % metrics.confusion_matrix(expected, predicted))
 
 # Converting to json
-# import json
+import json
 
 # params = str(clf_gnb)
 # params_norm = params[params.find('(') + 1:params.find(')')].replace('\n', '')
@@ -71,13 +93,17 @@ print("Confusion matrix:\n%s"
 #                  .split(',')]
 # }
 
-# response = {
-#     'params': None,
-#     'params_dict': None,
-#     'accuracy': accuracy,
-#     'precision': metrics.precision_score(expected, predicted),
-#     'recall': metrics.recall_score(expected, predicted),
-#     'f1': metrics.f1_score(expected, predicted),
-# }
+response = {
+    'params': None,
+    'params_dict': None,
+    'accuracy': accuracy,
+    'precision': metrics.precision_score(expected, predicted),
+    'recall': metrics.recall_score(expected, predicted),
+    'f1': metrics.f1_score(expected, predicted),
+    'time': time_taken,
+}
 
-# print json.dumps(response)
+print
+print 'JSON'
+print json.dumps([response])
+print

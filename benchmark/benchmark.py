@@ -10,8 +10,8 @@ https://www.algorithmhub.com/
 import re
 import importlib
 
-from utilities.calculate_time import find_time
-from utilities.make_graph import generate_graph
+from utilities.utils import find_time
+from utilities.utils import generate_graph
 
 # from algo_list import *
 # import algo_list
