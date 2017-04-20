@@ -17,9 +17,9 @@ utils_dir = os.path.dirname(os.path.dirname(__file__))
 import sys
 
 if os.path.isdir(utils_dir):
-    sys.path.insert(0, utils_dir)
+  sys.path.insert(0, utils_dir)
 else:
-    raise Exception('Utilities directory not found')
+  raise Exception('Utilities directory not found')
 
 # Main program starts here
 # Import the required libraries
@@ -28,6 +28,7 @@ from sklearn import (
     svm,
     metrics
 )
+import datetime
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -60,7 +61,7 @@ clf_rbf.fit(X_train, y_train)
 # To calculate the time taken
 @find_time
 def time_clf():
-    clf_rbf.fit(X_train, y_train)
+  clf_rbf.fit(X_train, y_train)
 
 time_taken = time_clf()
 
@@ -81,8 +82,6 @@ print("Confusion matrix:\n%s"
       % metrics.confusion_matrix(expected, predicted))
 
 # Converting to json
-import json
-
 params = str(clf_rbf)
 params_norm = params[params.find('(') + 1:params.find(')')].replace('\n', '')
 params_dict = {
@@ -94,16 +93,25 @@ params_dict = {
 }
 
 response = {
-    'params': params_norm,
-    'params_dict': params_dict,
-    'accuracy': accuracy,
-    'precision': metrics.precision_score(expected, predicted),
-    'recall': metrics.recall_score(expected, predicted),
-    'f1': metrics.f1_score(expected, predicted),
-    'time': time_taken,
+    "mid": "6606f9c7-1151-4808-911e-c36b1e7699af",
+    'inputs': {
+        'params': params_norm,
+        'params_dict': params_dict,
+    },
+    'outputs': {
+        'accuracy': accuracy,
+        'precision': metrics.precision_score(expected, predicted),
+        'recall': metrics.recall_score(expected, predicted),
+        'f1': metrics.f1_score(expected, predicted),
+        'time': time_taken,
+    },
+    "runCount": 0,
+    "isPublic": False,
+    "timeCreated": str(datetime.datetime.now()),
 }
 
+
 print
-print 'JSON'
-print json.dumps([response])
+print 'RESPONSE'
+print response
 print

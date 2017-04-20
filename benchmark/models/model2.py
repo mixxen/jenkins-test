@@ -28,6 +28,7 @@ from sklearn import (
     svm,
     metrics
 )
+import datetime
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -81,7 +82,6 @@ print("Confusion matrix:\n%s"
       % metrics.confusion_matrix(expected, predicted))
 
 # Converting to json
-import json
 
 params = str(clf_poly)
 params_norm = params[params.find('(') + 1:params.find(')')].replace('\n', '')
@@ -94,16 +94,24 @@ params_dict = {
 }
 
 response = {
-    'params': params_norm,
-    'params_dict': params_dict,
-    'accuracy': accuracy,
-    'precision': metrics.precision_score(expected, predicted),
-    'recall': metrics.recall_score(expected, predicted),
-    'f1': metrics.f1_score(expected, predicted),
-    'time': time_taken,
+    "mid": "6606f9c7-1151-4808-911e-c36b1e7658af",
+    'inputs': {
+        'params': params_norm,
+        'params_dict': params_dict,
+    },
+    'outputs': {
+        'accuracy': accuracy,
+        'precision': metrics.precision_score(expected, predicted),
+        'recall': metrics.recall_score(expected, predicted),
+        'f1': metrics.f1_score(expected, predicted),
+        'time': time_taken,
+    },
+    "runCount": 0,
+    "isPublic": False,
+    "timeCreated": str(datetime.datetime.now()),
 }
 
 print
-print 'JSON'
-print json.dumps([response])
+print 'RESPONSE'
+print response
 print
